@@ -25,7 +25,7 @@ class PromptDetailScreen extends StatelessWidget {
                 child: Image.network(
                   prompt.imageUrl,
                   height: 250,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   loadingBuilder: (context, child, loadingProgress) {
                     if (loadingProgress == null) return child;
                     return Container(

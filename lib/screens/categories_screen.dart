@@ -38,7 +38,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PromptBuddy', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Row(
+          children: [
+            const Icon(Icons.auto_awesome, color: Colors.deepPurpleAccent),
+            const SizedBox(width: 8),
+            const Text('PromptBuddy', style: TextStyle(fontWeight: FontWeight.bold)),
+          ],
+        ),
         actions: [
           IconButton(
             icon: Icon(dataService.isDarkMode ? Icons.light_mode : Icons.dark_mode),
@@ -71,7 +77,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 children: [
                   Image.network(
                     bgUrl,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     loadingBuilder: (context, child, loadingProgress) {
                       if (loadingProgress == null) return child;
                       return Container(
